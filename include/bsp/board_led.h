@@ -1,7 +1,7 @@
 #ifndef BSP__BOARD_LED_H__
 #define BSP__BOARD_LED_H__
 
-#include "stm32f4xx.h"
+#include "bsp/board_config.h"
 
 
 // LED Colors
