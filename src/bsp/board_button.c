@@ -9,7 +9,7 @@ void board_button_init(void)
     BOARD_BUTTON_GPIO_PORT->MODER &= ~(0x3U << (BOARD_BUTTON_PIN * 2)); // Set to input mode
 }
 
-bool board_read_button_states(void) 
+bool board_is_button_pressed(void) 
 {
     // Read the state of the button pin (active high: 1 means pressed)
     if ((BOARD_BUTTON_GPIO_PORT->IDR & (1U << BOARD_BUTTON_PIN)) == 0) {
