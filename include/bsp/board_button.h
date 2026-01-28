@@ -8,7 +8,7 @@
 void board_button_init(void);
 
 // Function to check if the user button is pressed
-bool board_read_button_states(void);
+bool board_is_button_pressed(void);
 
 
 
