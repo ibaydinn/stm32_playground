@@ -22,6 +22,15 @@
 /***************************************************************/
 
 
+/************************ BUTTON configuration ************************/
+// User button is connected to GPIOC pin 13
+#define BOARD_BUTTON_GPIO_PORT          GPIOC
+#define BOARD_BUTTON_PIN                13
+#define BOARD_BUTTON_GPIO_CLOCK_EN      RCC_AHB1ENR_GPIOCEN
+#define BOARD_BUTTON_PERIPHERAL_BUS     RCC->AHB1ENR
+/***************************************************************/
+
+
 /************************ USART configuration ************************/
 // Nucleo F429ZI onboard usart is usart3 with TX on PD8 and RX on PD9
 #define BOARD_USART                     USART3
