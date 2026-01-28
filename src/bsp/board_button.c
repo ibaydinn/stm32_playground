@@ -11,9 +11,7 @@ void board_button_init(void)
 
 bool board_read_button_states(void) 
 {
-    // Read the state of the button pin
-    // return (BOARD_BUTTON_GPIO_PORT->IDR & (1U << BOARD_BUTTON_PIN)) == 0; // Active low
-
+    // Read the state of the button pin (active high: 1 means pressed)
     if ((BOARD_BUTTON_GPIO_PORT->IDR & (1U << BOARD_BUTTON_PIN)) == 0) {
         return false; // Button is not pressed
     } else {
