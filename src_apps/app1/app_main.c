@@ -3,8 +3,8 @@
 #include "bsp/board_usart.h"
 
 #define UART_BAUDRATE 115200
-#define VECT_TAB_BASE_ADDRESS 0x08010000U
-#define VEC_TAB_OFFSET  0x8000U
+#define VECT_TAB_BASE_ADDRESS FLASH_BASE
+#define VEC_TAB_OFFSET  0x20000U
 
 void delay_ms(uint32_t ms)
 {

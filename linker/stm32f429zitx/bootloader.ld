@@ -47,7 +47,8 @@ MEMORY
 {
   CCMRAM    (xrw)     : ORIGIN = 0x10000000,   LENGTH = 64K
   RAM    (xrw)        : ORIGIN = 0x20000000,   LENGTH = 192K
-  FLASH    (rx)       : ORIGIN = 0x08000000,   LENGTH = 64K  /* 2048KBytes */
+  FLASH    (rx)       : ORIGIN = 0x08000000,   LENGTH = 64K  /* 2048KBytes - Sector 0-3 */ 
+  COMMON_FLASH (rx)   : ORIGIN = 0x08010000,   LENGTH = 64K  /* Sector 4 */
 }
 
 /* Sections */
@@ -60,6 +61,12 @@ SECTIONS
     KEEP(*(.isr_vector)) /* Startup code */
     . = ALIGN(4);
   } >FLASH
+
+  /*Common flash*/
+  .COMMON_APIS 0x08010000 :
+  {
+    KEEP(*(.COMMON_APIS))
+  } >COMMON_FLASH
 
   /* The program code and other data into "FLASH" Rom type memory */
   .text :
